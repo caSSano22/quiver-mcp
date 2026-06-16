@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1500" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06070a"/>
+      <stop offset="0.5" stop-color="#0a0c12"/>
+      <stop offset="1" stop-color="#10131c"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="0" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="1" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5eead4" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#5eead4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9d83ff"/>
+      <stop offset="1" stop-color="#5a3aff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1500" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glowL)"/>
+  <rect x="700" width="800" height="500" fill="url(#glowR)"/>
+
+  <!-- subtle grid -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="125" x2="1500" y2="125"/>
+    <line x1="0" y1="250" x2="1500" y2="250"/>
+    <line x1="0" y1="375" x2="1500" y2="375"/>
+    <line x1="375" y1="0" x2="375" y2="500"/>
+    <line x1="750" y1="0" x2="750" y2="500"/>
+    <line x1="1125" y1="0" x2="1125" y2="500"/>
+  </g>
+
+  <!-- LOGO MARK (left): a clean Q -->
+  <g transform="translate(180 250)">
+    <circle cx="0" cy="0" r="78" fill="none" stroke="url(#mark)" stroke-width="20"/>
+    <rect x="42" y="42" width="65" height="16" rx="4" fill="url(#mark)" transform="rotate(45 74 50)"/>
+  </g>
+
+  <!-- LEFT TEXT: brand -->
+  <g transform="translate(310 0)">
+    <text x="0" y="170" fill="#ffffff" font-family="Space Grotesk, Inter, sans-serif" font-size="92" font-weight="600" letter-spacing="-3">quiver</text>
+    <text x="0" y="220" fill="#7c5cff" font-family="JetBrains Mono, monospace" font-size="16" font-weight="500">// the directory for AI agent tools</text>
+    <text x="0" y="280" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif" font-size="20" font-weight="500">index · polygraph · stake-weighted review</text>
+    <text x="0" y="320" fill="rgba(255,255,255,0.35)" font-family="JetBrains Mono, monospace" font-size="14">$QUIVER · live on Base · quiver.mcp</text>
+  </g>
+
+  <!-- RIGHT: polygraph grade badges -->
+  <g transform="translate(960 0)">
+    <g transform="translate(0 100)">
+      <rect width="120" height="44" rx="22" fill="rgba(94,234,212,0.12)" stroke="rgba(94,234,212,0.4)" stroke-width="1"/>
+      <text x="60" y="29" text-anchor="middle" fill="#5eead4" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600">grade A</text>
+    </g>
+    <g transform="translate(140 100)">
+      <rect width="120" height="44" rx="22" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+      <text x="60" y="29" text-anchor="middle" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600">grade B</text>
+    </g>
+    <g transform="translate(280 100)">
+      <rect width="120" height="44" rx="22" fill="rgba(252,211,77,0.12)" stroke="rgba(252,211,77,0.4)" stroke-width="1"/>
+      <text x="60" y="29" text-anchor="middle" fill="#fcd34d" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600">grade D</text>
+    </g>
+    <g transform="translate(420 100)">
+      <rect width="120" height="44" rx="22" fill="rgba(244,114,182,0.12)" stroke="rgba(244,114,182,0.4)" stroke-width="1"/>
+      <text x="60" y="29" text-anchor="middle" fill="#f472b6" font-family="JetBrains Mono, monospace" font-size="18" font-weight="600">grade F</text>
+    </g>
+    <text x="0" y="200" fill="rgba(255,255,255,0.5)" font-family="JetBrains Mono, monospace" font-size="13">14 MCPs indexed · 1,284 polygraphed · 42K reviews</text>
+    <text x="0" y="240" fill="rgba(255,255,255,0.3)" font-family="JetBrains Mono, monospace" font-size="12">$ npx quiver check &lt;package&gt;</text>
+  </g>
+
+  <line x1="0" y1="0" x2="1500" y2="0" stroke="#7c5cff" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="0" y1="499" x2="1500" y2="499" stroke="#5eead4" stroke-width="1" stroke-opacity="0.3"/>
+</svg>
