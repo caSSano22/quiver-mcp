@@ -5,7 +5,6 @@ import { McpCard } from '@/components/McpCard';
 import { LiveFeed } from '@/components/LiveFeed';
 import { Stat } from '@/components/Stat';
 import { fetchMCPs } from '@/lib/fetch-mcps';
-import { token } from '@/lib/data';
 
 export const revalidate = 3600;
 
@@ -33,17 +32,17 @@ export default async function Home() {
                 AI agent tools.
               </h1>
               <p className="mx-auto mt-5 max-w-2xl text-base text-white/65 sm:text-lg">
-                MCP servers are eating the agent stack. Quiver indexes them all,
-                polygraphs the risky ones, and pays reviewers in $QUIVER for
-                catching the next rug before your agent installs it.
+                MCP servers are eating the agent stack. Quiver indexes them all
+                and polygraphs the risky ones — so your agent installs with
+                receipts, not vibes.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Link href="/directory" className="btn-primary">
                   Browse the directory
                   <span aria-hidden>→</span>
                 </Link>
-                <Link href="/token" className="btn-ghost">
-                  $QUIVER token
+                <Link href="/submit" className="btn-ghost">
+                  Submit an MCP
                 </Link>
               </div>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-white/40">
@@ -107,7 +106,7 @@ export default async function Home() {
           <div className="lg:col-span-1">
             <div className="mb-3 flex items-end justify-between">
               <h2 className="font-display text-xl font-semibold text-white">
-                On-chain activity
+                Recent activity
               </h2>
               <span className="text-xs text-white/40">last 24h</span>
             </div>
@@ -150,14 +149,14 @@ export default async function Home() {
               </p>
             </div>
             <div className="card">
-              <div className="text-xs font-mono text-brand-400">03 / Stake</div>
+              <div className="text-xs font-mono text-brand-400">03 / Reviews</div>
               <h3 className="mt-2 font-display text-lg font-semibold text-white">
-                Reviews that pay.
+                A public review market.
               </h3>
               <p className="mt-2 text-sm text-white/60">
-                Stake $QUIVER on a review. If the community agrees, you earn
-                from the rewards pool. If you shill, you get slashed. The
-                directory learns which reviewers to trust.
+                Every MCP has a public review thread. Reviewers build
+                reputation over time; the directory learns which voices to
+                trust and which to ignore. No token required to start.
               </p>
             </div>
           </div>
@@ -178,8 +177,8 @@ export default async function Home() {
                   Thousands of MCPs ship every quarter. Most never get
                   independently tested. The few audits that exist live in
                   vendor blogs, paywalled, or behind a Discord gate.
-                  Quiver is the public, stake-weighted, onchain-anchored
-                  default your agent already needed.
+                  Quiver is the public, evidence-first default your agent
+                  already needed.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-white/75">
                   <li className="flex gap-2">
@@ -192,7 +191,7 @@ export default async function Home() {
                   </li>
                   <li className="flex gap-2">
                     <span className="text-accent-mint">·</span>
-                    Reviewer stakes are slashed on caught shilling.
+                    Public review threads you can read before installing.
                   </li>
                   <li className="flex gap-2">
                     <span className="text-accent-mint">·</span>
@@ -227,8 +226,6 @@ export default async function Home() {
                   <div>
                     <span className="text-white/40">reviews </span>
                     <span className="text-white">2,102</span>
-                    <span className="text-white/40"> · stake </span>
-                    <span className="text-white">48.2k $QUIVER</span>
                   </div>
                 </div>
                 <div className="my-4 hairline" />
@@ -261,48 +258,23 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Token banner */}
+        {/* Submit CTA — replaces token banner */}
         <section className="container-page mt-24">
           <div className="card ring-soft">
             <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
               <div>
-                <div className="text-xs font-mono text-brand-400">// the token</div>
+                <div className="text-xs font-mono text-brand-400">// the wedge</div>
                 <h2 className="mt-1 font-display text-2xl font-semibold text-white sm:text-3xl">
-                  $QUIVER · live on Base
+                  Missing an MCP? Add it.
                 </h2>
                 <p className="mt-2 max-w-xl text-sm text-white/60">
-                  Stake to review. Earn when the community agrees. Get slashed
-                  when you shill. The directory's incentive layer.
+                  If you maintain an MCP server, drop it in the queue. We'll
+                  index it, polygraph it, and start collecting public reviews
+                  within the hour.
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-4 text-left">
-                <div>
-                  <div className="text-[10px] uppercase tracking-wider text-white/40">
-                    FDV
-                  </div>
-                  <div className="font-display text-lg font-semibold text-white">
-                    ${(token.fdv / 1_000_000).toFixed(1)}M
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-wider text-white/40">
-                    Liquidity
-                  </div>
-                  <div className="font-display text-lg font-semibold text-accent-mint">
-                    ${(token.liquidity / 1000).toFixed(0)}K
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-wider text-white/40">
-                    24h Vol
-                  </div>
-                  <div className="font-display text-lg font-semibold text-accent-pink">
-                    ${(token.volume_24h / 1000).toFixed(0)}K
-                  </div>
-                </div>
-              </div>
-              <Link href="/token" className="btn-primary">
-                Tokenomics →
+              <Link href="/submit" className="btn-primary">
+                Submit an MCP →
               </Link>
             </div>
           </div>

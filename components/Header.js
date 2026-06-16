@@ -8,7 +8,6 @@ import { ConnectButton } from './ConnectButton';
 const links = [
   { href: '/directory', label: 'Directory' },
   { href: '/leaderboard', label: 'Leaderboard' },
-  { href: '/token', label: '$QUIVER' },
   { href: '/x', label: 'X' },
   { href: '/docs', label: 'Docs' },
 ];

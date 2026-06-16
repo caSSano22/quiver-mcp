@@ -69,7 +69,7 @@ export default function XPage() {
                 <li>· Latest polygraph drops</li>
                 <li>· Reviewer call-outs</li>
                 <li>· Builder launches</li>
-                <li>· $QUIVER token updates</li>
+                <li>· Directory updates</li>
               </ul>
             </div>
 

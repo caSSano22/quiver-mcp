@@ -15,10 +15,10 @@ export async function POST(request, { params }) {
   } catch {
     return NextResponse.json({ ok: false, error: 'invalid json' }, { status: 400 });
   }
-  const { reviewer, stakeAmount, grade, body: text, wallet, signature } = body;
-  if (!reviewer || !stakeAmount || !grade || !text) {
+  const { reviewer, grade, body: text, wallet, signature } = body;
+  if (!reviewer || !grade || !text) {
     return NextResponse.json(
-      { ok: false, error: 'missing fields: reviewer, stakeAmount, grade, body' },
+      { ok: false, error: 'missing fields: reviewer, grade, body' },
       { status: 400 }
     );
   }
@@ -29,12 +29,11 @@ export async function POST(request, { params }) {
     );
   }
 
-  // TODO: verify wallet signature once the contract is deployed.
+  // TODO: verify wallet signature once reviews require auth.
   // For now we record the review and mark the wallet for off-chain verification.
   const review = await addReview({
     mcpSlug: slug,
     reviewer,
-    stakeAmount: String(stakeAmount),
     grade,
     body: text,
     wallet: wallet || reviewer,

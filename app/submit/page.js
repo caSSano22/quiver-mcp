@@ -57,8 +57,8 @@ export default function Submit() {
             Submission #{submitted.id.split('_')[0]} queued.
           </h2>
           <p className="mt-2 text-sm text-white/65">
-            We&rsquo;ll email you when the MCP is live. Want a polygraph
-            skip-the-queue? Stake 1,000 $QUIVER from the linked wallet.
+            We&rsquo;ll email you when the MCP is indexed. New submissions
+            typically go live within an hour.
           </p>
           <div className="mt-5 rounded-lg border border-white/10 bg-ink-900/50 p-3 text-xs text-white/65">
             <div className="font-mono">{submitted.package}</div>

@@ -170,10 +170,7 @@ export default function McpPage() {
                           <span className={gradeColor(r.grade)}>grade {r.grade}</span>
                         </div>
                         <div>
-                          staked{' '}
-                          <span className="font-mono text-white/80">
-                            {(Number(r.stakeAmount) / 1e18).toFixed(0)} $QUIVER
-                          </span>
+                          {r.verified ? 'verified' : 'pending'}
                         </div>
                       </div>
                       <p className="mt-2 text-sm text-white/80">{r.body}</p>

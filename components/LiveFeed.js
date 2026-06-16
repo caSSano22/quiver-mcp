@@ -3,12 +3,10 @@ import { liveFeed } from '@/lib/data';
 const kindColor = {
   submit: 'badge',
   verify: 'badge-mint',
-  stake: 'badge',
   review: 'badge-amber',
   claim: 'badge',
   update: 'badge',
   fix: 'badge-mint',
-  earn: 'badge-mint',
   request: 'badge',
   join: 'badge',
   star: 'badge',
@@ -24,7 +22,7 @@ export function LiveFeed() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
           </span>
           <span className="text-xs font-medium uppercase tracking-wider text-white/60">
-            live · onchain feed
+            live activity
           </span>
         </div>
         <span className="text-[11px] text-white/30">refreshed 2s ago</span>

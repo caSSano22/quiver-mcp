@@ -4,11 +4,10 @@ import { useState } from 'react';
 import { ConnectButton } from './ConnectButton';
 
 const GRADES = ['A', 'B', 'D', 'F'];
-const MIN_STAKE = 1; // $QUIVER
 
 export function ReviewForm({ mcpSlug, address, onSubmitted }) {
   const [grade, setGrade] = useState('A');
-  const [stake, setStake] = useState('10');
+  const [handle, setHandle] = useState('');
   const [body, setBody] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
@@ -16,16 +15,12 @@ export function ReviewForm({ mcpSlug, address, onSubmitted }) {
 
   async function submit(e) {
     e.preventDefault();
-    if (!address) {
-      setError('Connect a wallet first.');
+    if (!handle || handle.length < 2) {
+      setError('Add a handle so the review is attributable.');
       return;
     }
     if (body.length < 20) {
       setError('Review must be at least 20 characters.');
-      return;
-    }
-    if (Number(stake) < MIN_STAKE) {
-      setError(`Minimum stake is ${MIN_STAKE} $QUIVER.`);
       return;
     }
     setBusy(true);
@@ -35,11 +30,10 @@ export function ReviewForm({ mcpSlug, address, onSubmitted }) {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
-          reviewer: address,
-          stakeAmount: (Number(stake) * 1e18).toString(),
+          reviewer: handle,
           grade,
           body,
-          wallet: address,
+          wallet: address || handle,
         }),
       });
       const data = await r.json();
@@ -58,8 +52,9 @@ export function ReviewForm({ mcpSlug, address, onSubmitted }) {
       <div className="card">
         <div className="badge-mint">submitted</div>
         <p className="mt-3 text-sm text-white/75">
-          Your stake-weighted review of <span className="font-mono">{mcpSlug}</span> is in.
-          When the community votes it up, you earn from the rewards pool.
+          Your review of <span className="font-mono">{mcpSlug}</span> is live.
+          It&rsquo;s public, attributed to your handle, and visible to every
+          agent that checks this listing before installing.
         </p>
         <button
           type="button"
@@ -76,7 +71,7 @@ export function ReviewForm({ mcpSlug, address, onSubmitted }) {
     <form onSubmit={submit} className="card space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h3 className="font-display text-lg font-semibold text-white">
-          Submit a stake-weighted review
+          Submit a review
         </h3>
         <ConnectButton />
       </div>
@@ -112,15 +107,14 @@ export function ReviewForm({ mcpSlug, address, onSubmitted }) {
         </label>
         <label className="block">
           <span className="block text-xs font-medium uppercase tracking-wider text-white/45">
-            Stake (min 1 $QUIVER)
+            Handle
           </span>
           <input
-            type="number"
-            min={MIN_STAKE}
-            step="1"
-            value={stake}
-            onChange={(e) => setStake(e.target.value)}
-            className="mt-1.5 w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white focus:border-brand focus:outline-none"
+            type="text"
+            value={handle}
+            onChange={(e) => setHandle(e.target.value)}
+            placeholder="@yourhandle"
+            className="mt-1.5 w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white placeholder-white/30 focus:border-brand focus:outline-none"
           />
         </label>
       </div>
@@ -140,14 +134,14 @@ export function ReviewForm({ mcpSlug, address, onSubmitted }) {
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/5 pt-4">
         <p className="text-xs text-white/45">
-          Stake is locked until the community votes. If you shill, you can be slashed.
+          Reviews are public. Handle is what you sign with, not your wallet.
         </p>
         <button
           type="submit"
-          disabled={busy || !address}
+          disabled={busy}
           className="btn-primary disabled:opacity-50"
         >
-          {busy ? 'submitting…' : `Stake ${stake} $QUIVER`}
+          {busy ? 'submitting…' : 'Publish review'}
         </button>
       </div>
 

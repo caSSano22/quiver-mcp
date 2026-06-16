@@ -42,8 +42,8 @@
   <g transform="translate(310 0)">
     <text x="0" y="170" fill="#ffffff" font-family="Space Grotesk, Inter, sans-serif" font-size="92" font-weight="600" letter-spacing="-3">quiver</text>
     <text x="0" y="220" fill="#7c5cff" font-family="JetBrains Mono, monospace" font-size="16" font-weight="500">// the directory for AI agent tools</text>
-    <text x="0" y="280" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif" font-size="20" font-weight="500">index · polygraph · stake-weighted review</text>
-    <text x="0" y="320" fill="rgba(255,255,255,0.35)" font-family="JetBrains Mono, monospace" font-size="14">$QUIVER · live on Base · quiver.mcp</text>
+    <text x="0" y="280" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif" font-size="20" font-weight="500">index · polygraph · public reviews</text>
+    <text x="0" y="320" fill="rgba(255,255,255,0.35)" font-family="JetBrains Mono, monospace" font-size="14">directory · reviews · receipts</text>
   </g>
 
   <!-- RIGHT: polygraph grade badges -->

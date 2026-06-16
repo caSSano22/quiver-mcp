@@ -7,7 +7,7 @@ export const revalidate = 3600;
 
 export const metadata = {
   title: 'Leaderboard · Quiver',
-  description: 'Top-rated MCPs by stake-weighted community review.',
+  description: 'Top-rated MCPs by reputation-weighted community review.',
 };
 
 export default async function Leaderboard() {

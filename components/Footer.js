@@ -29,11 +29,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="text-white/70 hover:text-white" href="/token">
-                  $QUIVER token
-                </Link>
-              </li>
-              <li>
                 <Link className="text-white/70 hover:text-white" href="/submit">
                   Submit MCP
                 </Link>
@@ -63,7 +58,7 @@ export function Footer() {
               <li>
                 <a
                   className="text-white/70 hover:text-white"
-                  href="https://github.com/quiver-mcp"
+                  href="https://github.com/caSSano22/quiver-mcp"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -74,7 +69,7 @@ export function Footer() {
           </div>
           <div>
             <h4 className="text-xs font-medium uppercase tracking-wider text-white/40">
-              Network
+              Social
             </h4>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
@@ -87,32 +82,12 @@ export function Footer() {
                   @quiver_mcp
                 </a>
               </li>
-              <li>
-                <a
-                  className="text-white/70 hover:text-white"
-                  href="https://basescan.org"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Basescan
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-white/70 hover:text-white"
-                  href="https://dexscreener.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  DexScreener
-                </a>
-              </li>
             </ul>
           </div>
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
-          <span>© 2026 Quiver Labs. Built on Base.</span>
-          <span className="font-mono">$QUIVER · CA 0x0000…0000 · live</span>
+          <span>© 2026 Quiver Labs.</span>
+          <span className="font-mono">directory · reviews · receipts</span>
         </div>
       </div>
     </footer>

@@ -59,8 +59,7 @@ quiver check @playwright/mcp
 #   target  : npm/@playwright/mcp
 #   grade   : A
 #   fpr     : 0x9c4f…1a2e
-#   reviews : 2,102
-#   stake   : 48.2k $QUIVER`}
+#   reviews : 2,102`}
               </pre>
             </section>
 
@@ -73,8 +72,8 @@ quiver check @playwright/mcp
               <pre className="mt-4 overflow-x-auto rounded-xl border border-white/10 bg-ink-900/80 p-4 font-mono text-[12.5px] text-white/85">
 {`quiver check <package-or-url>      # grade + fingerprint
 quiver install <package>           # check + install (refuses if grade < C)
-quiver review <package> --stake 50 # submit a stake-weighted review
-quiver feed                        # live onchain activity`}
+quiver review <package>            # submit a public review
+quiver feed                        # live activity feed`}
               </pre>
             </section>
 
@@ -88,9 +87,9 @@ quiver feed                        # live onchain activity`}
 {`GET    /api/mcps                    # list all indexed MCPs
 GET    /api/mcps/:slug              # one MCP, with grade + fingerprint
 GET    /api/mcps/:slug/evidence     # full polygraph evidence bundle
-GET    /api/leaderboard             # stake-weighted top MCPs
-GET    /api/feed                    # live onchain activity
-POST   /api/reviews                 # submit a stake-weighted review (signed)
+GET    /api/leaderboard             # reputation-weighted top MCPs
+GET    /api/feed                    # live activity feed
+POST   /api/mcps/:slug/reviews      # submit a public review
 GET    /api/categories              # category list`}
               </pre>
             </section>
@@ -110,13 +109,6 @@ GET    /api/categories              # category list`}
                 Grades: A (all passed) · B (passed hijack + leak, network
                 unverified) · D (network violation or read-only lie) · F
                 (hijack or leak — disqualifying).
-              </p>
-            </section>
-
-            <section id="token" className="mt-10">
-              <h2 className="font-display text-xl font-semibold text-white">Token</h2>
-              <p className="mt-2 text-sm text-white/65">
-                $QUIVER on Base. Stake to review, earn when you&rsquo;re right.
               </p>
             </section>
 
