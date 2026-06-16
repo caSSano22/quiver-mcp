@@ -75,11 +75,11 @@ export function Footer() {
               <li>
                 <a
                   className="text-white/70 hover:text-white"
-                  href="https://x.com/quiver_mcp"
+                  href="https://x.com/quivermcp"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  @quiver_mcp
+                  @quivermcp
                 </a>
               </li>
             </ul>
