@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a0c12"/>
+      <stop offset="1" stop-color="#10131c"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9d83ff"/>
+      <stop offset="0.6" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#5a3aff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <circle cx="512" cy="512" r="420" fill="url(#glow)"/>
+  <g transform="translate(512 512)">
+    <g fill="url(#g)">
+      <path d="M-220 -300 L-220 300 L-130 300 L-130 -90 L60 300 L160 300 L160 -300 L70 -300 L70 90 L-120 -300 Z" opacity="0.95"/>
+    </g>
+    <circle cx="225" cy="-235" r="35" fill="#5eead4"/>
+  </g>
+  <g transform="translate(512 760)" fill="rgba(255,255,255,0.5)" font-family="JetBrains Mono, monospace" font-size="44" text-anchor="middle" font-weight="600">
+    <text>QUIVER</text>
+  </g>
+</svg>

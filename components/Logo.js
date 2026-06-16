@@ -1,0 +1,30 @@
+export function Logo({ size = 28, withWord = true }) {
+  return (
+    <span className="inline-flex items-center gap-2.5">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        width={size}
+        height={size}
+        className="shrink-0"
+      >
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#9d83ff" />
+            <stop offset="1" stopColor="#5a3aff" />
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="7" fill="#0a0c12" />
+        <g fill="url(#lg)">
+          <path d="M7 9 L7 25 L11 25 L11 16 L17 25 L21 25 L21 9 L17 9 L17 18 L11 9 Z" />
+        </g>
+        <circle cx="24" cy="10" r="1.6" fill="#5eead4" />
+      </svg>
+      {withWord && (
+        <span className="font-display text-[15px] font-semibold tracking-tight text-white">
+          quiver<span className="text-brand">.mcp</span>
+        </span>
+      )}
+    </span>
+  );
+}
