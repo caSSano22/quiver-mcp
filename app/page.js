@@ -6,6 +6,7 @@ import { LiveFeed } from '@/components/LiveFeed';
 import { Stat } from '@/components/Stat';
 import { Reveal } from '@/components/Reveal';
 import { fetchMCPs } from '@/lib/fetch-mcps';
+import { token } from '@/lib/data';
 
 export const revalidate = 3600;
 
@@ -298,26 +299,57 @@ export default async function Home() {
           </Reveal>
         </section>
 
-        {/* Submit CTA — replaces token banner */}
+        {/* Token banner */}
         <section className="container-page mt-24">
           <Reveal>
             <div className="card ring-soft card-hover">
               <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
                 <div>
-                  <div className="text-xs font-mono text-brand-400">// the wedge</div>
+                  <div className="text-xs font-mono text-brand-400">// the token</div>
                   <h2 className="mt-1 font-display text-2xl font-semibold text-white sm:text-3xl">
-                    Missing an MCP? Add it.
+                    $QUIVER · live on Base
                   </h2>
                   <p className="mt-2 max-w-xl text-sm text-white/60">
-                    If you maintain an MCP server, drop it in the queue. We&apos;ll
-                    index it, polygraph it, and start collecting public reviews
-                    within the hour.
+                    Stake to review. Earn when the community agrees. Get slashed
+                    when you shill. The directory&rsquo;s incentive layer.
+                  </p>
+                  <p className="mt-2 font-mono text-xs text-white/45 break-all">
+                    CA: {token.address}
                   </p>
                 </div>
-                <Link href="/submit" className="btn-primary">
-                  Submit an MCP →
-                </Link>
+                <div className="flex flex-col gap-2 sm:items-end">
+                  <a
+                    href="https://app.virtuals.io"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary"
+                  >
+                    Trade on Virtuals →
+                  </a>
+                  <Link href="/token" className="btn-ghost">
+                    Tokenomics →
+                  </Link>
+                </div>
               </div>
+            </div>
+          </Reveal>
+        </section>
+
+        {/* Submit CTA */}
+        <section className="container-page mt-8">
+          <Reveal>
+            <div className="card card-hover flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+              <div>
+                <h2 className="font-display text-lg font-semibold text-white">
+                  Missing an MCP? Add it.
+                </h2>
+                <p className="mt-1 text-sm text-white/55">
+                  We&rsquo;ll index it, polygraph it, and start collecting public reviews within the hour.
+                </p>
+              </div>
+              <Link href="/submit" className="btn-ghost">
+                Submit →
+              </Link>
             </div>
           </Reveal>
         </section>

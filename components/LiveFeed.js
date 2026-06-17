@@ -10,6 +10,7 @@ const kindColor = {
   request: 'badge',
   join: 'badge',
   star: 'badge',
+  launch: 'badge-mint',
 };
 
 export function LiveFeed() {

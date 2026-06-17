@@ -5,7 +5,8 @@
 A public, evidence-first index of every MCP server on npm — with a public letter grade (A–F) and a community review thread for each one.
 
 **Live:** https://quiver-xi.vercel.app
-**Status:** pre-launch · directory is real, token is not
+**GitHub:** https://github.com/caSSano22/quiver-mcp
+**X:** [@quivermcp](https://x.com/quivermcp)
 
 ---
 
@@ -19,9 +20,28 @@ Quiver is three things in one stack:
 2. **Polygraph** — a public letter grade (A–F) per server, based on a sandboxed adversarial probe of its tool surface.
 3. **Reviews** — a public review thread for every server. Reviewers build reputation over time; the directory learns which voices to trust.
 
+## Token
+
+**$QUIVER** is live on Base via [Virtuals Protocol](https://app.virtuals.io).
+
+- **CA:** `0x5e2d60835011c14a978bc958d6ec31dccc440770`
+- **Chain:** Base
+- **Supply:** 1,000,000,000 (18 decimals)
+- **Trade:** [app.virtuals.io](https://app.virtuals.io) (search "quiver")
+- **Contract:** [Basescan](https://basescan.org/address/0x5e2d60835011c14a978bc958d6ec31dccc440770)
+
+**Token utility:**
+
+1. **Stake-to-review** — lock $QUIVER behind a review; if the community upvotes it, you earn from the rewards pool. Caught shilling = 50% slash.
+2. **Boost** — MCP authors stake $QUIVER to feature on the directory's homepage.
+3. **API access** — heavy users pay $QUIVER per call to the indexed-data API.
+4. **Governance** — token holders vote on grade disputes, new probes, and treasury allocation.
+
+**Tokenomics:** 60% community · 18% treasury · 12% team (4y vest, 1y cliff) · 7% initial liquidity · 3% advisors.
+
 ## What's not here
 
-There is **no token**, **no staking**, **no on-chain claim**. The `/token` page says "Not launched." and that's the truth. If a token ever ships, this README will get a new section.
+There is **no Foundry contracts in this repo**. Earlier iterations had `QuiverReview.sol` (a stake-to-review contract) but it was intentionally removed to keep the initial launch simple. The on-chain review market will ship as a separate repo once $QUIVER liquidity is established on Base.
 
 ## Stack
 

@@ -29,6 +29,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link className="text-white/70 hover:text-white" href="/token">
+                  $QUIVER token
+                </Link>
+              </li>
+              <li>
                 <Link className="text-white/70 hover:text-white" href="/submit">
                   Submit MCP
                 </Link>
@@ -69,7 +74,7 @@ export function Footer() {
           </div>
           <div>
             <h4 className="text-xs font-medium uppercase tracking-wider text-white/40">
-              Social
+              Network
             </h4>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
@@ -82,12 +87,32 @@ export function Footer() {
                   @quivermcp
                 </a>
               </li>
+              <li>
+                <a
+                  className="text-white/70 hover:text-white"
+                  href="https://app.virtuals.io"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Virtuals
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-white/70 hover:text-white"
+                  href={`https://basescan.org/address/${'0x5e2d60835011c14a978bc958d6ec31dccc440770'}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Basescan
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
-          <span>© 2026 Quiver Labs.</span>
-          <span className="font-mono">directory · reviews · receipts</span>
+          <span>© 2026 Quiver Labs. Built on Base.</span>
+          <span className="font-mono">$QUIVER · CA 0x5e2d…0770 · live</span>
         </div>
       </div>
     </footer>

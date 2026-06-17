@@ -5,6 +5,7 @@ export async function GET() {
   const feed = await getFeed();
   // pad with a few seeded entries so the homepage looks alive on first load
   const seed = [
+    { who: '@quivermcp', action: 'launched', what: 'QUIVER on Virtuals', kind: 'launch' },
     { who: '@jesse', action: 'submitted', what: 'Bankr MCP', kind: 'submit' },
     { who: '@aaronjmars', action: 'verified', what: 'Aeon runtime', kind: 'verify' },
     { who: '@rootedge', action: 'reviewed', what: 'Context7', kind: 'review', grade: 'D' },
