@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { mcps } from '@/lib/data';
 
 function gradeColor(g) {
   if (g === 'A') return 'badge-mint';
@@ -9,16 +8,19 @@ function gradeColor(g) {
   return 'badge';
 }
 
-export function McpCard({ mcp, compact = false }) {
+export function McpCard({ mcp, compact = false, featured = false }) {
   return (
     <Link
       href={`/mcp/${mcp.slug}`}
-      className="group block card transition hover:border-white/20 hover:bg-white/[0.04]"
+      className={
+        'group relative block card card-hover overflow-hidden ' +
+        (featured ? 'featured-card' : '')
+      }
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <h3 className="truncate font-display text-base font-semibold text-white">
+            <h3 className="truncate font-display text-base font-semibold text-white transition group-hover:text-brand-400">
               {mcp.name}
             </h3>
             <span className={gradeColor(mcp.grade)}>
