@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="virtual-protocol-site-verification" content="02a6b010ed3e8033b27ffcc1a1993bf3" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
